@@ -32,7 +32,7 @@
 # NAME			:	$(OBJS)
 # 					$(CXX) $(CXXFLAGS) $^ -o $@
 					
-# $(OBJS_PATH)%.o	:	$(SRCS_PATH)%.cpp ./Makefile $(INCLUDE)
+# $(OBJS_PATH)/%.o	:	$(SRCS_PATH)/%.cpp ./Makefile $(INCLUDE)
 # 					$(CXX) $(CXXFLAGS) -I$(INCLUDE) -c $< -o $@
 
 # clean			:
