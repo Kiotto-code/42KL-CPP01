@@ -6,37 +6,79 @@
 #    By: yichan <yichan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/05 17:03:30 by yichan            #+#    #+#              #
-#    Updated: 2023/06/05 17:11:27 by yichan           ###   ########.fr        #
+#    Updated: 2023/06/07 17:44:50 by yichan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	run
+# NAME		=	harl
+# CXX			=	c++
+# CXXFLAG		=	-Wall -Werror -Wextra -g3 -std=c++98
+# SRCS_PATH	=	./srcs
+# OBJS_PATH	=	./objs
+# INCLUDES	=	./include
+# SRCS		=	$(wildcard $(SRCS_PATH)/*.cpp)
+# OBJS		=	$(patsubst $(SRCS_PATH)/*.cpp, $(OBJS_PATH)/*.o, $(SRCS))
+
+# all					:	$(NAME) 
+
+# $(NAME)				:	$(OBJS)
+# 						$(CXX) $(CXXFLAG) $^ -o $@
+
+# $(OBJS_PATH)/%.o	:	$(SRCS_PATH)/%.cpp ./Makefile 
+# 						mkdir -p $(@D)
+# 						$(CXX) $(CXXFLAG) -I$(INCLUDES) -c $< -o $@
+
+# clean		:
+# 				rm -rf $(OBJS_PATH)
+
+# fclean		:	clean
+# 				rm -rf $(NAME)
+				
+# re			:	fclean all
+
+# valgrind	:	all
+# 				valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt ./$(NAME)
+
+# .PHONY		:	clean fclean re all valgrind
+
+NAME		=	harl
 CXX			=	c++
-CXXFLAG		=	-Wall -Werror -Wextra
+CXXFLAG		=	-Wall -Werror -Wextra -g3 -std=c++98
+# CXXFLAG		+=	-fsanitize=address
+RM			=	rm -rf
+INCLUDE		=	./include
 SRCS_PATH	=	./srcs
 OBJS_PATH	=	./objs
-INCLUDES	=	./includes
 SRCS		=	$(wildcard $(SRCS_PATH)/*.cpp)
-OBJS		=	$(patsubst $(SRCS_PATH)/*.cpp, $(OBJS_PATH)/*.0,  SRCS)
+OBJS		=	$(patsubst $(SRCS_PATH)/%.cpp, $(OBJS_PATH)/%.o, $(SRCS))
 
-all					:	$(NAME)
+RESET		=	\033[0m
+GREEN		=	\033[38;5;46m
+WHITE		=	\033[38;5;15m
+GREY		=	\033[38;5;8m
+ORANGE		=	\033[38;5;202m
+RED			=	\033[38;5;160m
 
-$(NAME)				:	$(OBJS)
-						$(CXX) $(CXXFLAG) S^ -o $@
+all			:	$(NAME)
 
-$(OBJS_PATH)/%.o	:	$(SRCS_PATH)/%.cpp ./Makefile 
+$(NAME)		:	$(OBJS)
+				$(CXX) $(CXXFLAG) $^ -o $@
+				echo "The program name is $(RED)./$(NAME) $(RESET)"
+				
+$(OBJS_PATH)/%.o	:	$(SRCS_PATH)/%.cpp ./Makefile $(INCLUDE)
 						mkdir -p $(@D)
-						$(CXX) $(CXXFLAG) -I$(INCLUDES) -c $< -o $A
+						$(CXX) $(CXXFLAG) -I$(INCLUDE) -c $< -o $@
 
 clean		:
 				rm -rf $(OBJS_PATH)
 
 fclean		:	clean
 				rm -rf $(NAME)
+				$(shell find . -name "*.dSYM" -exec rm -rf {} \;)
 				
 re			:	fclean all
 
 valgrind	:
-				valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt $(NAME)
+				valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt ./$(NAME)
 
-.PHONY		:	clean fclean re all
+.PHONY		:	clean fclean re all valgrind

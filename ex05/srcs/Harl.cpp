@@ -6,7 +6,7 @@
 /*   By: yichan <yichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:31:42 by yichan            #+#    #+#             */
-/*   Updated: 2023/06/06 22:34:27 by yichan           ###   ########.fr       */
+/*   Updated: 2023/06/07 16:33:00 by yichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,51 +14,83 @@
 
 void    Harl::debug(void)
 {
-    std::cout << "[DEBUG]: " << std::endl;
-    std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
+	std::cout << GREEN;
+	std::cout << "[DEBUG]: " << std::endl;
+	std::cout << GREY;
+	std::cout <<"I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!"  << std::endl;
 }
 
 void    Harl::info(void)
 {
-    std::cout << "[INFO]: " << std::endl;
-    std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put "
-        "enough bacon in my burger! If you did, I wouldn't be asking for more!" << std::endl;
+	std::cout << "[INFO]: " << std::endl;
+	std::cout << GREY;
+	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put "
+		"enough bacon in my burger! If you did, I wouldn't be asking for more!" << std::endl;
 }
 
 void    Harl::warning( void )
 {
-    std::cout << "[WARNING]: " << std::endl;
-    std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for "
-        "years whereas you started working here since last month." << std::endl;
+	std::cout << "[WARNING]: " << std::endl;
+	std::cout << GREY;
+	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for "
+		"years whereas you started working here since last month." << std::endl;
 }
 
 void    Harl::error( void )
 {
-    std::cout << "[ERROR]: " << std::endl;
-    std::cout <<  "This is unacceptable! I want to speak to the manager now." << std::endl;
+	std::cout << "[ERROR]: " << std::endl;
+	std::cout << GREY;
+	std::cout <<  "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
+static void	stutter( void )
+{
+	std::cout << "[WRONG MESSAGE]: " << std::endl;
+	std::cout << GREY;
+	std::cout << "#@%*@!$%!..I dunno what is that" << std::endl;
+}
 
 //switch case was learn in this exercise.
 void    Harl::complain(std::string level)
 {
-    std::string array[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    int i;
-    for (i = 0; array[i] != level && i < 4; i++)
-         ;
-    switch (i)
-    {
-        case    0:
-            this -> debug();
-        case    1:
-            this -> info();
-        case    2:
-            this -> warning();
-        case    3:
-            this -> error();
-        default:
-            std::cout << "[WRONG MESSAGE]: " << std::endl;
-            std::cout << "#@%*@!$%!..I dunno what is that" << std::endl;
-    }
-    
+	int i;
+	static void	(Harl::*fcnPtr[4])(void) = {
+			&Harl::debug,
+			&Harl::info,
+			&Harl::warning,
+			&Harl::error
+	};
+
+	static std::string array[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
+	for(i = 0; i < 4; i++)
+	{
+		if (level == array[i])
+			break;
+	}
+	
+	// *ptr = &i;
+	if (i < 4)
+		(this->*fcnPtr[i])();
+	else
+		stutter();
+	// switch (i)
+	// {
+	// 	case 0:
+	// 		(this->*fcnPtr[0])();
+	// 		break;
+	// 	case 1:
+	// 		(this->*fcnPtr[1])();
+	// 		break;
+	// 	case 2:
+	// 		(this->*fcnPtr[2])();
+	// 		break;
+	// 	case 3:
+	// 		(this->*fcnPtr[3])();
+	// 		break;
+	// 	default:
+	// 		stutter();
+	// 		break;
+	// }
+	
 }
