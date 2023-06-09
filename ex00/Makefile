@@ -6,7 +6,7 @@
 #    By: yichan <yichan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 00:15:24 by yichan            #+#    #+#              #
-#    Updated: 2023/06/06 18:43:46 by yichan           ###   ########.fr        #
+#    Updated: 2023/06/10 01:24:08 by yichan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,19 @@ INCLUDES	= ./include
 SRCS		= $(wildcard $(SRCS_PATH)/*.cpp)
 OBJS		= $(patsubst $(SRCS_PATH)/%.cpp, $(OBJS_PATH)/%.o, $(SRCS))
 
+RESET		=	\033[0m
+GREEN		=	\033[38;5;46m
+WHITE		=	\033[38;5;15m
+GREY		=	\033[38;5;8m
+ORANGE		=	\033[38;5;202m
+RED			=	\033[38;5;160m
+
+
 all			: $(NAME)
-$(NAME)		: $(OBJS)
+
+$(NAME)		: 	$(OBJS)
 				$(CXX) $(CXXFLAGS) $^ -o $@
+				@echo "$(GREEN) ./$(NAME) $(RESET)"
 # $(OBJS_PATH)/%.o	:	$(SRCS_PATH)/%.cpp ./Makefile $(INCLUDES) | $(OBJS_PATH)
 # 						$(CXX) $(CXXFLAGS) -I$(INCLUDES) -c $< -o $@
 

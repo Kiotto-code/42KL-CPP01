@@ -6,14 +6,13 @@
 #    By: yichan <yichan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/18 14:40:56 by yichan            #+#    #+#              #
-#    Updated: 2023/06/04 17:25:51 by yichan           ###   ########.fr        #
+#    Updated: 2023/06/10 01:14:26 by yichan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	run
 CXX			=	c++
 CXXFLAG		=	-Wall -Werror -Wextra -g3 -std=c++98
-# CXXFLAG		+=	-fsanitize=address
 RM			=	rm -rf
 INCLUDE		=	./include
 SRCS_PATH	=	./srcs
@@ -32,7 +31,7 @@ all			:	$(NAME)
 
 $(NAME)		:	$(OBJS)
 				$(CXX) $(CXXFLAG) $^ -o $@
-				echo "$(GREEN) ./$(NAME) $(RESET)"
+				@echo "$(GREEN) ./$(NAME) $(RESET)"
 				
 $(OBJS_PATH)/%.o	:	$(SRCS_PATH)/%.cpp ./Makefile $(INCLUDE)
 						mkdir -p $(@D)

@@ -13,7 +13,6 @@
 # NAME		=	run
 # CXX			=	c++
 # CXXFLAGS	=	-Wall -Werror -Wextra -g3 -std=c++98 -pedantic
-# CXXFLAGS	+=	-fsanitize=address
 
 # INCLUDE		=	./include
 # SRCS_PATH	=	./srcs
@@ -63,7 +62,6 @@
 NAME		=	run
 CXX			=	c++
 CXXFLAG		=	-Wall -Werror -Wextra -g3 -std=c++98
-# CXXFLAG		+=	-fsanitize=address
 RM			=	rm -rf
 INCLUDE		=	./include
 SRCS_PATH	=	./srcs
@@ -82,7 +80,7 @@ all			:	$(NAME)
 
 $(NAME)		:	$(OBJS)
 				$(CXX) $(CXXFLAG) $^ -o $@
-				echo "$(GREEN) ./$(NAME) $(RESET)"
+				@echo "$(GREEN) ./$(NAME) $(RESET)"
 				
 $(OBJS_PATH)/%.o	:	$(SRCS_PATH)/%.cpp ./Makefile $(INCLUDE)
 						mkdir -p $(@D)
