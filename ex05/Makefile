@@ -6,7 +6,7 @@
 #    By: yichan <yichan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/05 17:03:30 by yichan            #+#    #+#              #
-#    Updated: 2023/06/07 17:44:50 by yichan           ###   ########.fr        #
+#    Updated: 2023/06/07 18:44:22 by yichan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@
 
 NAME		=	harl
 CXX			=	c++
-CXXFLAG		=	-Wall -Werror -Wextra -g3 -std=c++98
+CXXFLAG		=	-Wall -Werror -Wextra -g3 -std=c++98 -pedantic
 # CXXFLAG		+=	-fsanitize=address
 RM			=	rm -rf
 INCLUDE		=	./include
