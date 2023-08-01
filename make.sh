@@ -1,6 +1,6 @@
 # find . -name "ex*" -exec make re -C {} \;
 
-if [$# -eq $1]
+if [ $# -eq 0 ]
 then
    find . -name "ex*" -exec make re -C {} \;
 else

@@ -6,12 +6,18 @@
 /*   By: yichan <yichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 18:37:51 by yichan            #+#    #+#             */
-/*   Updated: 2023/05/24 00:12:00 by yichan           ###   ########.fr       */
+/*   Updated: 2023/07/12 13:48:36 by yichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Zombie.hpp"
 
+/**
+ * @brief newZombie: create zombie using new keyword
+ * 
+ * 
+ * @return int 
+ */
 int main()
 {
 	Zombie *vampire = newZombie("Batman");

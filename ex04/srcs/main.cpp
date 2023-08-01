@@ -6,7 +6,7 @@
 /*   By: yichan <yichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 01:59:00 by yichan            #+#    #+#             */
-/*   Updated: 2023/06/04 20:08:50 by yichan           ###   ########.fr       */
+/*   Updated: 2023/08/01 21:28:45 by yichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ std::string ft_replace(std::string str, std::string search, std::string replaces
 int main(int ac, char **av)
 {
     if (ac != 4 || !av[2][0] || !av[3][0] )
-        return (std::cout << "Bad arguments number" << std::endl , 0);
+        return (std::cerr << "Bad arguments number" << std::endl , 0);
     std::ifstream text;
     std::ofstream output;
     std::string str;
