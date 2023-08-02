@@ -6,7 +6,7 @@
 /*   By: yichan <yichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 01:59:00 by yichan            #+#    #+#             */
-/*   Updated: 2023/08/01 21:28:45 by yichan           ###   ########.fr       */
+/*   Updated: 2023/08/02 17:34:53 by yichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ int main(int ac, char **av)
     }
     text.close();
     output.close();
-    check_leaks();
+    // check_leaks();
+    system("leaks -q run");
 }
