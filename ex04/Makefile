@@ -61,7 +61,7 @@
 
 NAME		=	run
 CXX			=	c++
-CXXFLAG		=	-Wall -Werror -Wextra -g3 -std=c++98
+CXXFLAGS		=	-Wall -Werror -Wextra -g3 -std=c++98
 RM			=	rm -rf
 INCLUDE		=	./include
 SRCS_PATH	=	./srcs
@@ -79,12 +79,12 @@ RED			=	\033[38;5;160m
 all			:	$(NAME)
 
 $(NAME)		:	$(OBJS)
-				$(CXX) $(CXXFLAG) $^ -o $@
+				$(CXX) $(CXXFLAGS) $^ -o $@
 				@echo "$(GREEN) ./$(NAME) $(RESET)"
 				
 $(OBJS_PATH)/%.o	:	$(SRCS_PATH)/%.cpp ./Makefile $(INCLUDE)
 						mkdir -p $(@D)
-						$(CXX) $(CXXFLAG) -I$(INCLUDE) -c $< -o $@
+						$(CXX) $(CXXFLAGS) -I$(INCLUDE) -c $< -o $@
 
 clean		:
 				rm -rf $(OBJS_PATH)
