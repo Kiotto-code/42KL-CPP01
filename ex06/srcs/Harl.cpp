@@ -6,7 +6,7 @@
 /*   By: yichan <yichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:31:42 by yichan            #+#    #+#             */
-/*   Updated: 2023/08/01 21:39:05 by yichan           ###   ########.fr       */
+/*   Updated: 2023/08/27 01:37:01 by yichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void	stutter( void )
 {
 	std::cout << "[WRONG MESSAGE]: " << std::endl;
 	std::cout << GREY;
-	std::cout << "#@%*@!$%!..I dunno what is that" << RESET << std::endl;
+	std::cout << "[ Probably complaining about insignificant problems ]" << RESET << std::endl;
 }
 
 //switch case was learn in this exercise.

@@ -6,7 +6,7 @@
 /*   By: yichan <yichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 01:59:00 by yichan            #+#    #+#             */
-/*   Updated: 2023/08/27 00:17:02 by yichan           ###   ########.fr       */
+/*   Updated: 2023/08/27 00:44:53 by yichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "sed.h"
 
 std::string ft_replace(std::string str, std::string search, std::string replacestr) 
 {
@@ -30,7 +29,7 @@ std::string ft_replace(std::string str, std::string search, std::string replaces
 int main(int ac, char **av)
 {
     if (ac != 4 || !av[2][0] || !av[3][0] )
-        return (std::cerr << "Bad arguments number" << std::endl , 0);
+        return (std::cerr << "Bad arguments number: <Filename> <Old String> <New String>" << std::endl , 0);
     std::ifstream text;
     std::ofstream output;
     std::string str;

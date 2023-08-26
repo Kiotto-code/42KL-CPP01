@@ -6,13 +6,13 @@
 #    By: yichan <yichan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/22 17:52:28 by yichan            #+#    #+#              #
-#    Updated: 2023/08/22 17:52:30 by yichan           ###   ########.fr        #
+#    Updated: 2023/08/27 01:37:36 by yichan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	harlFilter
 CXX			=	c++
-CXXFLAGS		=	-Wall -Werror -Wextra -g3 -std=c++98
+CXXFLAGS		=	-Wall -Werror -Wextra -g3 -std=c++98 #-fsanitize=address
 RM			=	rm -rf
 INCLUDE		=	./include
 SRCS_PATH	=	./srcs

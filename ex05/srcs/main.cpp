@@ -9,6 +9,9 @@ int main(int ac, char **av)
         Person.complain(av[1]);
     else
     {
+        Person.complain("DEBUG");
+        Person.complain("INFO");
         Person.complain("WARNING");
+        Person.complain("ERROR");
     }
 }
