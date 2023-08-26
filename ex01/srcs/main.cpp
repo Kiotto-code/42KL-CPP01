@@ -6,7 +6,7 @@
 /*   By: yichan <yichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 15:43:18 by yichan            #+#    #+#             */
-/*   Updated: 2023/08/06 22:00:33 by yichan           ###   ########.fr       */
+/*   Updated: 2023/08/27 00:02:09 by yichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main(void)
 
 	//delete zombies that are multiple statically allocated
 	delete[] zombies;
-	system("leaks -q zombie");
+	// system("leaks -q zombie");
 	return 0;
 }
 

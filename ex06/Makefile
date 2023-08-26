@@ -5,41 +5,10 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yichan <yichan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/06/05 17:03:30 by yichan            #+#    #+#              #
-#    Updated: 2023/08/02 17:18:28 by yichan           ###   ########.fr        #
+#    Created: 2023/08/22 17:52:28 by yichan            #+#    #+#              #
+#    Updated: 2023/08/22 17:52:30 by yichan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-# NAME		=	harlFilter
-# CXX			=	c++
-# CXXFLAGS		=	-Wall -Werror -Wextra -g3 -std=c++98
-# SRCS_PATH	=	./srcs
-# OBJS_PATH	=	./objs
-# INCLUDES	=	./include
-# SRCS		=	$(wildcard $(SRCS_PATH)/*.cpp)
-# OBJS		=	$(patsubst $(SRCS_PATH)/*.cpp, $(OBJS_PATH)/*.o, $(SRCS))
-
-# all					:	$(NAME) 
-
-# $(NAME)				:	$(OBJS)
-# 						$(CXX) $(CXXFLAGS) $^ -o $@
-
-# $(OBJS_PATH)/%.o	:	$(SRCS_PATH)/%.cpp ./Makefile 
-# 						mkdir -p $(@D)
-# 						$(CXX) $(CXXFLAGS) -I$(INCLUDES) -c $< -o $@
-
-# clean		:
-# 				rm -rf $(OBJS_PATH)
-
-# fclean		:	clean
-# 				rm -rf $(NAME)
-				
-# re			:	fclean all
-
-# valgrind	:	all
-# 				valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt ./$(NAME)
-
-# .PHONY		:	clean fclean re all valgrind
 
 NAME		=	harlFilter
 CXX			=	c++

@@ -6,7 +6,7 @@
 /*   By: yichan <yichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 01:59:00 by yichan            #+#    #+#             */
-/*   Updated: 2023/08/02 17:34:53 by yichan           ###   ########.fr       */
+/*   Updated: 2023/08/27 00:17:02 by yichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int main(int ac, char **av)
     text.open(av[1]);
     if (!text.is_open())
     {
-        std::cerr << text << " could not be opened for reading!" << std::endl;
+        std::cerr << av[1] << " could not be opened for reading!" << std::endl;
         return 1;
     }
     output.open(std::string(av[1]) + ".replace");
@@ -59,5 +59,5 @@ int main(int ac, char **av)
     text.close();
     output.close();
     // check_leaks();
-    system("leaks -q run");
+    // system("leaks -q run");
 }
